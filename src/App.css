@@ -1,38 +1,613 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=M+PLUS+Rounded+1c:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+
 .App {
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  background: #1f1f1f6d;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/* .App {
+  height: 100vh;
   text-align: center;
+  /* background: url("https://images.hdqwalls.com/download/boat-starry-night-sky-h3-2560x1440.jpg"); */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */ 
+
+#first-question {
+  padding-top: 17%;
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 4px #1f1f1f;
+  margin-bottom: 30px ;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  letter-spacing: 1.5px;
+}
+.content{
+  position: fixed;
+  align-content: center;
+  text-align: center;
+  width: 700px;
+  height: 100px;
+  top: 20%;
+  left: 50%;
+  margin-top: -50px; /* Negative half of height. */
+  margin-left: -350px; /* Negative half of width. */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.error {
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 40px;
+  background: #c21500;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #be1b05, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #be1b05, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.error h1 {
+  font-size: 25px;
+  padding: 10px;
+}
+
+#first-input {
+  z-index: 1000;
+  border-radius: 50px;
+  font-family: 'Alegreya Sans', sans-serif;
+  height: 40px;
+  width: 70%;
+  font-size: 28px;
+  outline: none;
+  padding: 0 20px;
+  box-shadow: rgb(128, 128, 128) 2px 2px 6px
+}
+
+
+
+#bgslider { 
+  overflow: hidden; 
+  height: 100vh;
+  
+}
+
+#bgslider figure { 
+  z-index: -1;
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+
+#bgslider figure img { 
+	width: 20%; 
+	float: left; 
+	height:100vh;
+}
+
+@keyframes slidy {
+  0% { left: 0%; }
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -300%; }
+  95% { left: -300%; }
+  100% { left: -400%; }
   }
+
+.App-2 {
+  height: 100%;
+  width: 100%;
+  background: #485563;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.intro {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px groove white;
+  background: url("https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/SV_timelapse.gif") no-repeat;
+  background-size: cover;
+  /* background-color: rgba(255, 255, 255, 0.762); */
+  height: 500px;
+  align-content: center;
+  border-radius: 30px;
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+
+.spacer{
+  height: 40px;
+}
+
+.city-images {
+  margin-top: 40px;
+}
+
+#date {
+  color: white;
+  margin-top: 20px;
+  text-shadow: 2px 4px #1f1f1f;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  font-size: 65px;
+}
+
+#date1 {
+  color: white;
+  margin-top: 20px;
+  text-shadow: 2px 4px #1f1f1f;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  font-size: 65px;
+  display: none;
+}
+
+.city-images img:hover {
+  box-shadow:2px 2px 8px 8px rgba(165, 164, 164, 0.794);
+}
+
+.city-images-2 img:hover {
+  box-shadow:2px 2px 8px 8px rgba(165, 164, 164, 0.794);
+}
+
+.city-images img {
+  height: 300px;
+  width:100%;
+}
+
+.city-images-2 {
+  margin-top: 35px;
+}
+
+.city-images-2 img {
+  height:300px;
+  width:100%;
+}
+
+#place-image {
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+}
+
+.time{
+  width: 33%;
+  height: 300px;
+  text-align: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.time:hover:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.1;
+  background: url("https://images.creativemarket.com/0.1.0/ps/356452/910/607/m1/fpnw/wm0/1412.m00.i123.n014.s.c10.129249686-vector-clock-on-white-background-.jpg?1424087660&s=796678198931a8a03b6b0e69dd29a247");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+
+.time h2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.time p {
+  color: white;
+  margin-top: 20px;
+  text-shadow: 2px 4px #1f1f1f;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  font-size: 70px;
+}
+
+.weather{
+  width: 200px;
+  height: 300px;
+  border-left: 2px dashed white;
+  border-right: 2px dashed white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.weather:hover:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.2;
+  background: url("https://i.pinimg.com/originals/7f/63/1e/7f631e577ed5e5ffbbce726f8ec03489.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+.weather h2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.weather p:first-of-type {
+  color: white;
+  margin-top: 20px;
+  text-shadow: 2px 4px #1f1f1f;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  font-size: 70px;
+}
+
+.weather p:nth-of-type(2) {
+  color: white;
+  font-size: 25px;
+}
+
+.basic-info {
+  white-space: normal;
+  overflow: overlay;
+  width: 33%;
+  height: 300px;
+  text-align: center;
+  font-family: 'Alegreya Sans', sans-serif !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.basic-info:hover:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.2;
+  background: url("https://blog.drupa.com/wp-content/uploads/2015/11/Calendar-1000x605.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+.basic-info h2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.basic-info span {
+  color: white;
+  font-size: 20px;
+  text-shadow: none;
+}
+
+.basic-info p {
+  color: white;
+  margin-top: 20px;
+  text-shadow: 2px 4px #1f1f1f;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  font-size: 30px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+
+
+.back button {
+  color: white;
+  font-family: 'Alegreya Sans', sans-serif !important;
+  border: 2px solid white;
+  background: none;
+  font-size: 20px;
+  border-top: none;
+  padding: 5px;
+  width: 140px;
+}
+
+.back button:hover {
+  color: black;
+  font-family: 'Alegreya Sans', sans-serif !important;
+  background-color: white;
+  border-top: none;
+  padding: 5px;
+  width: 140px;
+}
+
+
+.thing-info img:hover .thing-info p{
+  display: block;
+}
+
+.thing-info img{
+  height: 300px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: none;
+}
+
+#mainTitle {
+  text-align: center;
+  margin:  auto;
+  width:65%;
+  height: 75px;
+  z-index: 5;
+  color: white;
+  text-shadow: 2px 4px rgb(52, 52, 52);
+  /* text-shadow: 2px 4px #1f1f1f; */
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+
+
+.thing-info p {
+  display: block;
+}
+
+.poi {
+  margin-bottom: 100px;
+}
+
+.poi-name {
+  border-radius: 0px 0px 10px 10px;
+  border: 4px groove white;
+  height: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items:center;
+  justify-content:center;
+  text-shadow: 2px 2px #1f1f1f;
+  background-color: transparent;
+  transition: background-color 1s linear;
+  transition: background-image 1s linear;
+}
+
+.poi-name:hover {
+  background-color: #ffffff;
+
+  transition: background-color 0.75s linear;
+  border:none;
+}
+
+.poi-name:hover h3 {
+  color:black;
+  transition: color 0.45s linear;
+  text-shadow:none;
+}
+
+
+.thing-info h3 {
+  text-align: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.poi-pic {
+  border: 4px groove white;
+  border-bottom:none;
+  border-radius: 10px 10px 0px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.poi-pic p {
+  display: none;
+  position: absolute;
+  color: white;
+  padding-left: 5px;
+  font-family: 'Alegreya Sans', sans-serif !important;
+}
+
+.poi-pic:hover > img{
+  opacity: 0.075;
+}
+
+.poi-pic:hover > p {
+  display:block;
+}
+
+
+.poi-pic {
+  position: relative;
+  overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+
+
+
+
+.thing-info a:hover{
+  text-emphasis: none;
+  text-decoration: none;
+  outline: none;
+}
+
+#ttd-title {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  color: white;
+  text-shadow: 2px 4px #1f1f1f;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  font-size: 50px;
+}
+
+
+@media (max-width: 1000px){
+  #date {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  #date1 {
+    display: block;
+  }
+  .things-to-do {
+    overflow: overlay;
+  }
+  .things-to-do:hover:before {
+    display: none;
   }
 }
+
+@media (max-width: 900px) {
+
+  .layer {
+    background-color: rgba(66, 66, 66, 0.459);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+  .city-images img {
+    margin-top:35px;
+
+  }
+
+  .city-images-2 img{
+    display: none;
+  }
+
+  .App {
+    background: url('https://wallpaperaccess.com/full/1318548.jpg');
+    animation: gradient 30s ease infinite;
+  }
+
+  .time {
+    width:100%;
+  }
+  .weather {
+    width:100%;
+    border: none;
+  }
+  .basic-info {
+    width:100%;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    20% {
+      background-position: 40% 10%;
+    }
+    40% {
+      background-position: 80% 50%;
+    }
+    60% {
+      background-position: 100% 90%;
+    }
+    80% {
+      background-position: 50% 40%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+ 
+  .figure {
+    visibility: none;
+  }
+
+  .content {
+    width: 300px;
+    margin-left: -150px
+  }
+
+  #first-question {
+    font-size: 42px;
+  }
+
+  #mainTitle {
+    font-size: 35px;
+    width:100%;
+    margin-bottom: 55px;
+  }
+
+
+  #first-input {
+    width: 100%;
+  }
+
+  .intro{
+    position: relative;
+    height: 350px;
+  }
+  .intro h1 {
+    position: relative;
+    font-size: 30px !important;
+    top: 0px;
+  }
+  #place-image {
+    position: absolute;
+    top: 0px;
+  }
+}
+
+@media (max-width: 768px){ 
+  #date {
+    display: block;
+  }
+  #date1 {
+    display: none;
+  }
+}
+
+

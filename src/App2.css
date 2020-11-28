@@ -1,0 +1,524 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=M+PLUS+Rounded+1c:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Didact+Gothic&family=Rokkitt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;700&display=swap');
+
+
+.App {
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+     background: rgba(34, 33, 33, 0.363);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/* .App {
+  height: 100vh;
+  text-align: center;
+  /* background: url("https://images.hdqwalls.com/download/boat-starry-night-sky-h3-2560x1440.jpg"); */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */ 
+
+#first-question {
+  padding-top: 17%;
+  color: red;
+  font-size: 50px;
+  text-shadow: 2px 4px #1f1f1f;
+  margin-bottom: 30px ;
+  font: 'M PLUS Rounded 1c', sans-serif !important;
+  letter-spacing: 1.5px;
+}
+
+
+
+.content{
+  position: fixed;
+  align-content: center;
+  text-align: center;
+  width: 700px;
+  height: 100px;
+  top: 20%;
+  left: 50%;
+  margin-top: -50px; /* Negative half of height. */
+  margin-left: -350px; /* Negative half of width. */
+}
+
+.error {
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 40px;
+  background: #c21500;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #be1b05, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #be1b05, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.error h1 {
+  font-size: 25px;
+  padding: 10px;
+}
+
+#first-input {
+  z-index: 1000;
+  border-radius: 50px;
+  font-family: 'Alegreya Sans', sans-serif;
+  height: 40px;
+  width: 70%;
+  font-size: 28px;
+  outline: none;
+  padding: 0 20px;
+  box-shadow: rgb(128, 128, 128) 2px 2px 6px
+}
+
+
+
+#bgslider { 
+  overflow: hidden; 
+  height: 100vh;
+  
+}
+
+#bgslider figure { 
+  z-index: -1;
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+
+#bgslider figure img { 
+	width: 20%; 
+	float: left; 
+	height:100vh;
+}
+
+@keyframes slidy {
+  0% { left: 0%; }
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -300%; }
+  95% { left: -300%; }
+  100% { left: -400%; }
+  }
+
+.App-2 {
+  z-index: -3;
+  height: 100%;
+  width: 100%;
+  background: none;  /* fallback for old browsers */
+  
+}
+
+.allContent {
+    background: white;
+    height: 800%;
+    margin-top:600px;
+}
+
+.spacer {
+    height: 450px;
+    background: white;
+}
+
+.mainImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 600px;
+    width: 100%;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    height:200px;
+    
+
+}
+
+
+
+.container {
+    background-color: white;
+}
+
+.mainTitle {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.searchAgain {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+}
+
+.searchAgain button:hover {
+    background-color: white;
+    color: black;
+    transition: background-color 1s linear;
+    transition: color 1s linear;
+}
+
+.searchAgain button {
+    border-radius: 8px;
+    font-family: 'Alegreya Sans', sans-serif !important;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.452);
+    border: 3px solid white;
+    color:white;
+    font-size: 20px;
+    transition: background-color 1s linear;
+    transition: color 1s linear;
+    width:200px;
+}
+
+.mainTitle h1 {
+    color: white;
+    font-family: 'Didact Gothic', sans-serif;
+    text-shadow: 2px 4px 2px rgb(24, 24, 24);
+    font-size: 50px;
+    width: 100%;
+}
+
+.mainTitle {
+  width:100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.mainContent {
+    position: relative;
+    top:75px;
+    text-align: center;
+}
+
+.mainContent h2 {
+    
+    
+    text-shadow: 1px 2px rgba(52, 52, 52, 0.192);
+    font-size: 45px;
+    font-family: 'Didact Gothic', sans-serif;
+
+}
+
+.mainContent p {
+    text-shadow: 3px 2px rgba(52, 52, 52, 0.404);
+    font-size: 65px;
+    font-family: 'Didact Gothic', sans-serif;
+    margin-top: 40px;
+}
+
+.weather p:nth-of-type(2){
+  display: none;
+}
+
+#date1 {
+    display: none;
+}
+
+.geoText {
+    position: relative;
+    top: 300px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+iframe {
+    border-radius: 30px;
+    box-shadow: rgb(128, 128, 128) 4px 4px 12px;
+}
+
+.geoText h1 {
+    font-weight: 700
+}
+
+.geoText p {
+    font-weight: 400
+}
+
+
+.row-img-2 {
+    margin-top: 40px;
+    margin-bottom: 150px;
+}
+
+.spacer2 {
+    z-index: 2;
+    top: 500px;
+    height: 450px;
+    opacity: 100%;
+    overflow: hidden;
+
+    
+}
+
+.spacer2 img {
+  margin-top:300px;
+    z-index: 2;
+    position: relative;
+    display: block;
+    width: 100%;
+   
+    height: 850px;
+    bottom: 300px;
+
+    
+}
+
+
+.gallery{
+    position: relative;
+
+    background: white;
+    height: 400px;
+}
+
+.poi-block {
+    background: white;
+}
+
+.poi-title {
+    position: relative;
+    font-weight: 900;
+    height: 250px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    background: white;
+}
+
+.gallery-text-2 {
+  display: none;
+}
+
+.poi-title h1 {
+    font-weight: 700;
+    padding-top: 75px;
+}
+
+.poi-title p {
+    font-weight: 400;
+}
+
+.poi {
+    box-shadow: 3px 3px 8px 6px #2b2a2a3b;
+    border-radius: 10px;
+}
+
+.poi-img img{
+    margin-top: 0;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 0px 0px;
+    
+}
+
+.poi-name {
+    height:60px; 
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+.gallery {
+    padding-top: 60px;
+    height: 650px;
+}
+
+.gallery-images img{
+    width: 100%;
+    height: 200px;
+    box-shadow: rgb(128, 128, 128) 3px 3px 10px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px){
+}
+
+@media (max-width: 900px) {
+
+  .layer {
+    background-color: rgba(66, 66, 66, 0.459);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+  
+  .App {
+    background: url('https://wallpaperaccess.com/full/1318548.jpg');
+    animation: gradient 30s ease infinite;
+  }
+
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    20% {
+      background-position: 40% 10%;
+    }
+    40% {
+      background-position: 80% 50%;
+    }
+    60% {
+      background-position: 100% 90%;
+    }
+    80% {
+      background-position: 50% 40%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+ 
+  .figure {
+    visibility: none;
+  }
+
+  .content {
+    width: 300px;
+    margin-left: -150px
+  }
+
+  #first-question {
+    font-size: 42px;
+  }
+
+  #mainTitle {
+    font-size: 35px;
+    width:100%;
+    margin-bottom: 55px;
+  }
+
+
+  #first-input {
+    width: 100%;
+  }
+
+} 
+
+@media (max-width: 768px){ 
+  .mainTitle h1 {
+    font-size: 45px;
+  }
+
+  .time {
+    margin-bottom: 75px;
+  }
+
+  .weather {
+    margin-bottom: 75px;
+  }
+
+  .mainContent {
+    margin-bottom: 0px;
+    height:750px
+  }
+
+  .geoText {
+    
+  }
+
+  iframe {
+    height: 300px;
+    margin-top:30px;
+  }
+
+  .spacer2 {
+    height: 300px;
+  }
+
+  .spacer2 img {
+    top: 0;
+    height: 300px;
+  }
+
+  .gallery-text-2 {
+    display: block;
+    font-family: 'Didact Gothic', sans-serif;
+    margin-bottom: 40px;
+  }
+  .gallery-text-2 h1 {
+    font-weight: 900;
+  }
+
+  .gallery-text{ 
+    display: none;
+    font-family: 'Didact Gothic', sans-serif;
+  }
+
+  .image1 {
+    margin-bottom: 35px;
+  }
+
+  .poi-title {
+    height:200px;
+    padding-top:50px;
+  }
+
+
+
+  .poi {
+    height:375px;
+   
+    margin-top: 80px;
+  }
+
+  .last-poi {
+    margin-bottom: 150px;
+  }
+
+  .gallery {
+    height:1500px;
+    padding-top:50px;
+  }
+
+}
+
+
