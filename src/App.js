@@ -1,6 +1,6 @@
 
 import React,{useEffect, useState} from 'react';
-import './App2.css';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
@@ -77,10 +77,6 @@ function App() {
     }
     },  
   ]);
-  const [flights, setFlights] = useState([]);
-  const [long, setLong] = useState('');
-  const [lat, setLat] = useState('');
-  const [pointofIntrests, setPointofIntrests] = useState('');
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [date1, setDate1] = useState('');
@@ -175,44 +171,7 @@ function App() {
     }
   };
 
-  const getAirport = async () => {
-    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=4ba4ec413d424059946203123201010&q=${query}`);
-    const data = await response.json();
-    if(query.length > 0){
-      const tokenResponse = await fetch("https://test.api.amadeus.com/v1/security/oauth2/token", {
-        body: "grant_type=client_credentials&client_id=TCFzcDRmYJAfYyolSyx314J6DRP2sXKk&client_secret=tCoxKuOlOElCe02g",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        method: "POST"
-      });
-      const tokenData = await tokenResponse.json();
-      console.log(tokenData);
-      const response1 = await fetch(`https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude=${data.location.lat}&longitude=${data.location.lon}&radius=500&page%5Blimit%5D=10&page%5Boffset%5D=0&sort=relevance`, {headers: new Headers({ 'Authorization': ' Bearer ' + tokenData.access_token})});
-      const data1 = await response1.json();
-      console.log(data1);
-      console.log(data1.data[0].iataCode);
-      const response2 = await fetch(`https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=${data1.data[0].iataCode}&oneWay=false&nonStop=false`, {headers: new Headers({ 'Authorization': ' Bearer ' + tokenData.access_token})});
-      const data2 = await response2.json();
-      console.log(data2);
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-      }
-      var tripArray = [data2.data[getRandomInt(data2.data.length)], data2.data[getRandomInt(data2.data.length)], data2.data[getRandomInt(data2.data.length)], data2.data[getRandomInt(data2.data.length)]];
-      console.log(tripArray);
-      var tripInfoArray = [];
-      for(var j=0; j<4; j++){
-        console.log(j);
-        const response3 = await fetch(`http://airlabs.co/api/v6/cities?api_key=f5f08550-434e-4752-9535-e6d735b6f620&code=${tripArray[j].destination}`)
-        const data3 = await response3.json();
-        console.log(data3);
-        tripInfoArray.push(data3);
-      }
-      console.log(tripInfoArray);
-      setFlights(tripArray);
-    }
-  }
-
+  
   const getPOI = async () => {
     const response1 = await fetch(`https://api.weatherapi.com/v1/current.json?key=4ba4ec413d424059946203123201010&q=${query}`);
     const data1 = await response1.json();
@@ -366,99 +325,6 @@ function App() {
     if(code === '2' && cityImg != "error"){
     return(
 
-      // <div className="App-2">
-      //   <div className="info" class="container">
-      //     <div className="back">
-      //       <form action="" onSubmit={removeQuery}>
-      //         <button>Search Again</button>
-      //       </form>
-      //     </div>
-      //     <div className="spacer"></div>
-      //     <h1 id="mainTitle">{title}</h1>
-      //     <div className="intro">
-      //       <div className="title">
-      //         <iframe
-      //           width="100%"
-      //           height="500"
-      //           frameborder="0"
-      //           src={mapURL} allowfullscreen>
-      //         </iframe>
-      //         {/* <img id="place-image" src={cityImg} alt=""/> */}
-      //       </div>
-      //     </div>
-      //     <div className="main-content" class="row justify-content-between">
-      //       <div className="time col-md-4 col-sm-12 col-xs-12">
-      //         <h2>Time: </h2>
-      //         <p>{time}</p>
-      //       </div>
-      //       <div className="weather col-md-4 col-sm-12 col-xs-12">
-      //         <h2>Weather: </h2>
-      //         <p>{weather}&deg;F</p>
-      //         <p><img src={weatherImg}></img></p>
-      //       </div>
-      //       <div className="basic-info col-md-4 col-sm-12 col-xs-12">
-      //         <h2>Date: </h2>
-      //         <p id="date">{date}</p>
-      //         <p id="date1">{date1}</p>
-      //       
-      //       </div>
-      //     </div>
-      //     <div className="row city-images">
-      //       <div className="col-md-4 col-sm-4 col-xs-4">
-      //         <img src={cityImg[0]} alt=""/>
-      //       </div>
-      //       <div className="col-md-4 col-sm-4 col-xs-4">
-      //         <img src={cityImg[1]} alt=""/>
-      //       </div>
-      //       <div className="col-md-4 col-sm-4 col-xs-4">
-      //         <img src={cityImg[2]} alt=""/>
-      //       </div>
-      //     </div>
-      //     <div className="row city-images-2">
-      //       <div className="col-md-4 col-sm-4 col-xs-4">
-      //         <img src={cityImg[3]} alt=""/>
-      //       </div>
-      //       <div className="col-md-4 col-sm-4 col-xs-4">
-      //         <img src={cityImg[4]} alt=""/>
-      //       </div>
-      //       <div className="col-md-4 col-sm-4 col-xs-4">
-      //         <img src={cityImg[5]} alt=""/>
-      //       </div>
-      //     </div>
-      //     <h2 id="ttd-title">Things to do: </h2>
-      //     <div class="row row-list justify-content-between thing-info">
-      //       <div class="col-md-4 col-sm-4 poi">
-      //         <div className="poi-pic">
-      //           <p id="poi-text">{info[0].wikipedia_extracts.text}</p>
-      //           <img src={info[0].preview.source} alt=""/>
-      //         </div>
-      //         <a target="_blank" href={info[0].wikipedia}><div className="poi-name">
-      //           <h3>{POI[0].properties.name}</h3>
-      //         </div></a>
-      //       </div>
-      //       <div class="col-md-4 col-sm-4  poi">
-      //         <div className="poi-pic">
-      //           <p>{info[1].wikipedia_extracts.text}</p>
-      //           <img src={info[1].preview.source} alt=""/>
-      //         </div>
-      //         <a target="_blank" href={info[1].wikipedia}><div className="poi-name">
-      //           <h3>{POI[1].properties.name}</h3>
-      //         </div></a>
-      //       </div>
-      //       <div class="col-md-4 col-sm-4 poi">
-      //         <div className="poi-pic">
-      //           <p>{info[2].wikipedia_extracts.text}</p>
-      //           <img src={info[2].preview.source} alt=""/>
-      //         </div>
-      //         <a target="_blank" href={info[2].wikipedia}><div className="poi-name">
-      //          <h3>{POI[2].properties.name}</h3>
-      //         </div></a>
-      //       </div>
-      //     </div>
-      //     <div className="spacer"></div>
-      //   </div>
-      // </div>
-
       <div className="App-2">
         <div className="header">
           <img src={cityImg[0]} alt="" className="mainImg"/>
@@ -539,7 +405,7 @@ function App() {
                     <img src={info[0].preview.source} alt=""/>
                   </div>
                   <div className="poi-name">
-                    <h3>{POI[0].properties.name}</h3>
+                  <a href={info[0].wikipedia} target="_blank"><h3>{POI[0].properties.name}</h3></a>
                   </div>
                 </div>
               </div>
@@ -549,7 +415,7 @@ function App() {
                     <img src={info[1].preview.source} alt=""/>
                   </div>
                   <div className="poi-name">
-                    <h3>{POI[1].properties.name}</h3>
+                    <a href={info[1].wikipedia} target="_blank"><h3>{POI[1].properties.name}</h3></a>
                   </div>
                 </div>
               </div>
@@ -561,7 +427,7 @@ function App() {
                     <img src={info[2].preview.source} alt=""/>
                   </div>
                   <div className="poi-name">
-                    <h3>{POI[2].properties.name}</h3>
+                  <a href={info[2].wikipedia} target="_blank"><h3>{POI[2].properties.name}</h3></a>
                 </div>
               </div>
               </div>

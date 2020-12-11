@@ -1,23 +1,23 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-countrytracker-dev-151549-authRole",
-            "UnauthRoleArn": "arn:aws:iam::912586620612:role/amplify-countrytracker-dev-151549-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::912586620612:role/amplify-countrytracker-dev-151549-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-countrytracker-dev-151549-deployment",
-            "UnauthRoleName": "amplify-countrytracker-dev-151549-unauthRole",
-            "StackName": "amplify-countrytracker-dev-151549",
-            "StackId": "arn:aws:cloudformation:us-east-1:912586620612:stack/amplify-countrytracker-dev-151549/85150460-041a-11eb-a149-0ed5acf75591",
-            "AmplifyAppId": "dlu5a8p2zpfxd"
-        },
-        "categories": {
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "dlu5a8p2zpfxd",
-                    "type": "manual"
-                }
-            }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-countrytracker-dev-151549-authRole",
+      "UnauthRoleArn": "arn:aws:iam::912586620612:role/amplify-countrytracker-dev-151549-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::912586620612:role/amplify-countrytracker-dev-151549-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-countrytracker-dev-151549-deployment",
+      "UnauthRoleName": "amplify-countrytracker-dev-151549-unauthRole",
+      "StackName": "amplify-countrytracker-dev-151549",
+      "StackId": "arn:aws:cloudformation:us-east-1:912586620612:stack/amplify-countrytracker-dev-151549/85150460-041a-11eb-a149-0ed5acf75591",
+      "AmplifyAppId": "dlu5a8p2zpfxd"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dlu5a8p2zpfxd",
+          "type": "manual"
         }
+      }
     }
+  }
 }
